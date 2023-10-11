@@ -71,6 +71,10 @@ static const riscv_implied_info_t riscv_implied_info[] =
   {"zks", "zksed"},
   {"zks", "zksh"},
 
+  {"p", "zbpbo"},
+  {"p", "zpsfoperand"},
+  {"p", "zpn"},
+
   {"v", "zvl128b"},
   {"v", "zve64d"},
 
