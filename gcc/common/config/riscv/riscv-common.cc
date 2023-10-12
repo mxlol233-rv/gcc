@@ -17,6 +17,7 @@ You should have received a copy of the GNU General Public License
 along with GCC; see the file COPYING3.  If not see
 <http://www.gnu.org/licenses/>.  */
 
+#include "config/riscv/riscv-opts.h"
 #include <sstream>
 #include <vector>
 
@@ -1230,6 +1231,10 @@ static const riscv_ext_flag_table_t riscv_ext_flag_table[] =
   {"zicboz", &gcc_options::x_riscv_zicmo_subext, MASK_ZICBOZ},
   {"zicbom", &gcc_options::x_riscv_zicmo_subext, MASK_ZICBOM},
   {"zicbop", &gcc_options::x_riscv_zicmo_subext, MASK_ZICBOP},
+
+  {"zbpbo", &gcc_options::x_riscv_rvp_subext, MASK_ZBPBO},
+  {"zpn",  &gcc_options::x_riscv_rvp_subext, MASK_ZPN},
+  {"zpsfoperand", &gcc_options::x_riscv_rvp_subext, MASK_ZPSFOPERAND},
 
   {"zve32x",   &gcc_options::x_target_flags, MASK_VECTOR},
   {"zve32f",   &gcc_options::x_target_flags, MASK_VECTOR},

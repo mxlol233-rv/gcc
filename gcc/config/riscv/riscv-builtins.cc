@@ -164,6 +164,12 @@ AVAIL (always,     (!0))
 #define DIRECT_BUILTIN(INSN, FUNCTION_TYPE, AVAIL)			\
   RISCV_BUILTIN (INSN, #INSN, RISCV_BUILTIN_DIRECT, FUNCTION_TYPE, AVAIL)
 
+#define DIRECT_BUILTIN_NO_PREFIX(INSN, NAME, FUNCTION_TYPE, AVAIL)             \
+  {                                                                            \
+    CODE_FOR_##INSN, "__builtin_riscv_" #NAME, RISCV_BUILTIN_DIRECT,           \
+      FUNCTION_TYPE, riscv_builtin_avail_##AVAIL                               \
+  }
+
 /* Define __builtin_riscv_<INSN>, which is a RISCV_BUILTIN_DIRECT_NO_TARGET
    function mapped to instruction CODE_FOR_riscv_<INSN>,  FUNCTION_TYPE
    and AVAIL are as for RISCV_BUILTIN.  */
@@ -194,6 +200,9 @@ AVAIL (always,     (!0))
 #define RISCV_ATYPE_UV2SI build_vector_type (unsigned_intSI_type_node, 2)
 #define RISCV_ATYPE_V8HI build_vector_type (intHI_type_node, 8)
 #define RISCV_ATYPE_UV8HI build_vector_type (unsigned_intHI_type_node, 8)
+
+#define RISCV_ATYPE_IXLEN  riscv_int_xlen_node
+#define RISCV_ATYPE_UIXLEN riscv_uint_xlen_node
 
 /* RISCV_FTYPE_ATYPESN takes N RISCV_FTYPES-like type codes and lists
    their associated RISCV_ATYPEs.  */
@@ -242,6 +251,9 @@ static GTY(()) int riscv_builtin_decl_index[NUM_INSN_CODES];
 
 tree riscv_float16_type_node = NULL_TREE;
 
+tree riscv_uint_xlen_node = NULL_TREE;
+tree riscv_int_xlen_node = NULL_TREE;
+
 /* Return the function type associated with function prototype TYPE.  */
 
 static tree
@@ -270,6 +282,17 @@ riscv_build_function_type (enum riscv_function_type type)
 static void
 riscv_init_builtin_types (void)
 {
+  if (TARGET_64BIT)
+    {
+      riscv_int_xlen_node = intDI_type_node;
+      riscv_uint_xlen_node = unsigned_intDI_type_node;
+    }
+  else
+    {
+      riscv_int_xlen_node = intSI_type_node;
+      riscv_uint_xlen_node = unsigned_intSI_type_node;
+    }
+
   /* Provide the _Float16 type and float16_type_node if needed.  */
   if (!float16_type_node)
     {

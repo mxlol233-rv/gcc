@@ -18,4 +18,4 @@ along with GCC; see the file COPYING3.  If not see
 <http://www.gnu.org/licenses/>.  */
 
 /* kabs */
-DIRECT_BUILTIN (kabsw, RISCV_USI_FTYPE_USI, zpn),
+DIRECT_BUILTIN_NO_PREFIX (kabsw, kabsw, RISCV_USI_FTYPE_USI, zpn),

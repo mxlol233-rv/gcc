@@ -18,6 +18,7 @@ You should have received a copy of the GNU General Public License
 along with GCC; see the file COPYING3.  If not see
 <http://www.gnu.org/licenses/>.  */
 
+#include "config/riscv/riscv-opts.h"
 #define IN_TARGET_CODE 1
 
 #define INCLUDE_STRING
@@ -62,6 +63,14 @@ riscv_cpu_cpp_builtins (cpp_reader *pfile)
     builtin_define ("__riscv_div");
   if (TARGET_DIV && TARGET_MUL)
     builtin_define ("__riscv_muldiv");
+
+  // p ext
+  if (TARGET_ZPN)
+    builtin_define ("__riscv_zpn");
+  if (TARGET_ZPSFOPERAND)
+    builtin_define ("__riscv_zpsfoperand");
+  if (TARGET_ZBPBO)
+    builtin_define ("__riscv_zbpbo");
 
   builtin_define_with_int_value ("__riscv_xlen", UNITS_PER_WORD * 8);
   if (TARGET_HARD_FLOAT)

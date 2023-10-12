@@ -98,6 +98,9 @@
   UNSPECV_ZERO
   UNSPECV_PREI
 
+  ;; p ext unspec
+  UNSPEC_KABS
+
   ;; Zihintpause unspec
   UNSPECV_PAUSE
 
@@ -251,6 +254,7 @@
 ;; Classification of RVV instructions which will be added to each RVV .md pattern and used by scheduler.
 ;; rdvlenb     vector byte length vlenb csrr read
 ;; rdvl        vector length vl csrr read
+;; dsp Digital Signal Processing (DSP) instructions
 ;; vsetvl      vector configuration-setting instrucions
 ;; 7. Vector Loads and Stores
 ;; vlde        vector unit-stride load instructions
@@ -344,7 +348,7 @@
   "unknown,branch,jump,call,load,fpload,store,fpstore,
    mtc,mfc,const,arith,logical,shift,slt,imul,idiv,move,fmove,fadd,fmul,
    fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,ghost,bitmanip,rotate,
-   atomic,condmove,crypto,rdvlenb,rdvl,vsetvl,vlde,vste,vldm,vstm,vlds,vsts,
+   atomic,condmove,crypto,rdvlenb,rdvl,dsp,vsetvl,vlde,vste,vldm,vstm,vlds,vsts,
    vldux,vldox,vstux,vstox,vldff,vldr,vstr,
    vialu,viwalu,vext,vicalu,vshift,vnshift,vicmp,viminmax,
    vimul,vidiv,viwmul,vimuladd,viwmuladd,vimerge,vimov,
@@ -3140,6 +3144,7 @@
 
 (include "bitmanip.md")
 (include "crypto.md")
+(include "rvp.md")
 (include "sync.md")
 (include "peephole.md")
 (include "pic.md")
