@@ -98,9 +98,6 @@
   UNSPECV_ZERO
   UNSPECV_PREI
 
-  ;; p ext unspec
-  UNSPEC_KABS
-
   ;; Zihintpause unspec
   UNSPECV_PAUSE
 
@@ -166,6 +163,7 @@
 
 ;; Main data type used by the insn
 (define_attr "mode" "unknown,none,QI,HI,SI,DI,TI,HF,SF,DF,TF,
+  V2HI,V4HI,V4QI,V8QI,V2SI,
   VNx1BI,VNx2BI,VNx4BI,VNx8BI,VNx16BI,VNx32BI,VNx64BI,
   VNx1QI,VNx2QI,VNx4QI,VNx8QI,VNx16QI,VNx32QI,VNx64QI,
   VNx1HI,VNx2HI,VNx4HI,VNx8HI,VNx16HI,VNx32HI,
@@ -254,7 +252,9 @@
 ;; Classification of RVV instructions which will be added to each RVV .md pattern and used by scheduler.
 ;; rdvlenb     vector byte length vlenb csrr read
 ;; rdvl        vector length vl csrr read
-;; dsp Digital Signal Processing (DSP) instructions
+;; dsp     Digital Signal Processing (DSP) instructions
+;; simd    simd in rvp extension
+;; dsp64   Digital Signal Processing (DSP) instructions for 64bits
 ;; vsetvl      vector configuration-setting instrucions
 ;; 7. Vector Loads and Stores
 ;; vlde        vector unit-stride load instructions
@@ -348,7 +348,8 @@
   "unknown,branch,jump,call,load,fpload,store,fpstore,
    mtc,mfc,const,arith,logical,shift,slt,imul,idiv,move,fmove,fadd,fmul,
    fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,ghost,bitmanip,rotate,
-   atomic,condmove,crypto,rdvlenb,rdvl,dsp,vsetvl,vlde,vste,vldm,vstm,vlds,vsts,
+   atomic,condmove,crypto,rdvlenb,rdvl,dsp,simd,dsp64,
+   vsetvl,vlde,vste,vldm,vstm,vlds,vsts,
    vldux,vldox,vstux,vstox,vldff,vldr,vstr,
    vialu,viwalu,vext,vicalu,vshift,vnshift,vicmp,viminmax,
    vimul,vidiv,viwmul,vimuladd,viwmuladd,vimerge,vimov,

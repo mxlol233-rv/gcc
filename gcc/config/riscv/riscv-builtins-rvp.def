@@ -18,4 +18,7 @@ along with GCC; see the file COPYING3.  If not see
 <http://www.gnu.org/licenses/>.  */
 
 /* kabs */
-DIRECT_BUILTIN_NO_PREFIX (kabsw, kabsw, RISCV_USI_FTYPE_USI, zpn),
+DIRECT_BUILTIN_NO_PREFIX (kabsw, kabsw, RISCV_SI_FTYPE_SI, zpn),
+DIRECT_BUILTIN_NO_PREFIX (kabsv2hi2, kabs16, RISCV_UIXLEN_FTYPE_UIXLEN, zpn32),
+DIRECT_BUILTIN_NO_PREFIX (kabsv2hi2, v_kabs16, RISCV_V2HI_FTYPE_V2HI, zpn32),
+DIRECT_BUILTIN_NO_PREFIX (kabsv4hi2, v64_kabs16, RISCV_V4HI_FTYPE_V4HI, zpn64),
