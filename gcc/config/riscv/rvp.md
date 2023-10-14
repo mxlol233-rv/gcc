@@ -64,14 +64,14 @@
 
 (define_insn "kabs<mode>2"
   [(set (match_operand:VECI 0 "register_operand"              "=r")
-	(unspec:VECI [(match_operand:VECI 1 "register_operand" " r")] UNSPEC_KABS))]
+	(ss_abs:VECI (match_operand:VECI 1 "register_operand" " r") ))]
   "TARGET_ZPN"
   "kabs<bits>\t%0, %1"
   [(set_attr "type"   "simd")
    (set_attr "mode" "<MODE>")])
    
 ;; sub/adddi spn
-(define_insn "*subdi3_rvp"
+(define_insn "rvp_subdi3"
   [(set (match_operand:DI 0 "register_operand"               "=r")
 	(minus:DI (match_operand:DI 1 "register_operand" " r")
 		 (match_operand:DI 2 "arith_operand"   " r")))]
@@ -90,7 +90,7 @@
   [(set_attr "type" "dsp64")
    (set_attr "mode" "DI")])
 
-(define_insn "*adddi3_rvp"
+(define_insn "rvp_adddi3"
   [(set (match_operand:DI 0 "register_operand"               "=r")
 	(plus:DI (match_operand:DI 1 "register_operand" " r")
 		 (match_operand:DI 2 "arith_operand"   " r")))]

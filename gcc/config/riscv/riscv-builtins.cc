@@ -185,8 +185,10 @@ AVAIL (always,     (!0))
 #define RISCV_ATYPE_USI unsigned_intSI_type_node
 #define RISCV_ATYPE_QI intQI_type_node
 #define RISCV_ATYPE_HI intHI_type_node
+#define RISCV_ATYPE_UHI unsigned_intHI_type_node
 #define RISCV_ATYPE_SI intSI_type_node
 #define RISCV_ATYPE_DI intDI_type_node
+#define RISCV_ATYPE_UDI unsigned_intDI_type_node
 #define RISCV_ATYPE_VOID_PTR ptr_type_node
 
 /* p ext */
