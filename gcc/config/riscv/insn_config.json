@@ -1,0 +1,2867 @@
+{
+    "insns": [
+        {
+            "insn": "add8",
+            "type": "SIMD",
+            "mode": [
+                {
+                    "xlen": "*",
+                    "oprands": [
+                        "uintXLEN_t",
+                        "uintXLEN_t",
+                        "uintXLEN_t"
+                    ],
+                    "builtin": "__rv_add8"
+                },
+                {
+                    "xlen": "32",
+                    "oprands": [
+                        "uint8x4_t",
+                        "uint8x4_t",
+                        "uint8x4_t"
+                    ],
+                    "builtin": "__rv_v_uadd8"
+                },
+                {
+                    "xlen": "32",
+                    "oprands": [
+                        "int8x4_t",
+                        "int8x4_t",
+                        "int8x4_t"
+                    ],
+                    "builtin": "__rv_v_sadd8"
+                },
+                {
+                    "xlen": "64",
+                    "oprands": [
+                        "uint8x8_t",
+                        "uint8x8_t",
+                        "uint8x8_t"
+                    ],
+                    "builtin": "__rv_v_uadd8"
+                },
+                {
+                    "xlen": "64",
+                    "oprands": [
+                        "int8x8_t",
+                        "int8x8_t",
+                        "int8x8_t"
+                    ],
+                    "builtin": "__rv_v_sadd8"
+                }
+            ]
+        },
+        {
+            "insn": "add16",
+            "type": "SIMD",
+            "mode": [
+                {
+                    "xlen": "*",
+                    "oprands": [
+                        "uintXLEN_t",
+                        "uintXLEN_t",
+                        "uintXLEN_t"
+                    ],
+                    "builtin": "__rv_add16"
+                },
+                {
+                    "xlen": "32",
+                    "oprands": [
+                        "uint16x2_t",
+                        "uint16x2_t",
+                        "uint16x2_t"
+                    ],
+                    "builtin": "__rv_v_uadd16"
+                },
+                {
+                    "xlen": "32",
+                    "oprands": [
+                        "int16x2_t",
+                        "int16x2_t",
+                        "int16x2_t"
+                    ],
+                    "builtin": "__rv_v_sadd16"
+                },
+                {
+                    "xlen": "64",
+                    "oprands": [
+                        "uint16x4_t",
+                        "uint16x4_t",
+                        "uint16x4_t"
+                    ],
+                    "builtin": "__rv_v_uadd16"
+                },
+                {
+                    "xlen": "64",
+                    "oprands": [
+                        "int16x4_t",
+                        "int16x4_t",
+                        "int16x4_t"
+                    ],
+                    "builtin": "__rv_v_sadd16"
+                }
+            ]
+        },
+        {
+            "insn": "add64",
+            "type": "Zpsfoperand",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [
+                        "int64_t",
+                        "int64_t",
+                        "int64_t"
+                    ],
+                    "builtin": "__rv_sadd64"
+                },
+                {
+                    "xlen": 32,
+                    "oprands": [
+                        "uint64_t",
+                        "uint64_t",
+                        "uint64_t"
+                    ],
+                    "builtin": "__rv_uadd64"
+                }
+            ]
+        },
+        {
+            "insn": "ave",
+            "type": "DSP",
+            "mode": [
+                {
+                    "xlen": "*",
+                    "oprands": [
+                        "intXLEN_t",
+                        "intXLEN_t",
+                        "intXLEN_t"
+                    ],
+                    "builtin": "__rv_ave"
+                }
+            ]
+        },
+        {
+            "insn": "bitrev",
+            "type": "DSP",
+            "mode": [
+                {
+                    "xlen": "*",
+                    "oprands": [
+                        "uintXLEN_t",
+                        "uintXLEN_t",
+                        "uint32_t"
+                    ],
+                    "builtin": "__rv_bitrev"
+                }
+            ]
+        },
+        {
+            "insn": "bitrevi",
+            "type": "DSP",
+            "mode": [
+                {
+                    "xlen": "*",
+                    "oprands": [
+                        "uintXLEN_t",
+                        "uintXLEN_t",
+                        "uint32_t"
+                    ],
+                    "builtin": "__rv_bitrev"
+                }
+            ]
+        },
+        {
+            "insn": "clrov",
+            "type": "DSP",
+            "mode": [
+                {
+                    "xlen": "*",
+                    "oprands": [
+                        "void",
+                        "void"
+                    ],
+                    "builtin": "__rv_clrov"
+                }
+            ]
+        },
+        {
+            "insn": "clrs8",
+            "type": "SIMD",
+            "mode": [
+                {
+                    "xlen": "*",
+                    "oprands": [
+                        "uintXLEN_t",
+                        "intXLEN_t"
+                    ],
+                    "builtin": "__rv_clrs8"
+                },
+                {
+                    "xlen": "32",
+                    "oprands": [
+                        "uint8x4_t",
+                        "int8x4_t"
+                    ],
+                    "builtin": "__rv_v_clrs8"
+                },
+                {
+                    "xlen": "64",
+                    "oprands": [
+                        "uint8x8_t",
+                        "int8x8_t"
+                    ],
+                    "builtin": "__rv_v_clrs8"
+                }
+            ]
+        },
+        {
+            "insn": "clrs16",
+            "type": "SIMD",
+            "mode": [
+                {
+                    "xlen": "*",
+                    "oprands": [
+                        "uintXLEN_t",
+                        "intXLEN_t"
+                    ],
+                    "builtin": "__rv_clrs16"
+                },
+                {
+                    "xlen": "32",
+                    "oprands": [
+                        "uint16x2_t",
+                        "int16x2_t"
+                    ],
+                    "builtin": "__rv_v_clrs16"
+                },
+                {
+                    "xlen": "64",
+                    "oprands": [
+                        "uint16x4_t",
+                        "int16x4_t"
+                    ],
+                    "builtin": "__rv_v_clrs16"
+                }
+            ]
+        },
+        {
+            "insn": "clrs32",
+            "type": "SIMD",
+            "mode": [
+                {
+                    "xlen": "*",
+                    "oprands": [
+                        "uintXLEN_t",
+                        "intXLEN_t"
+                    ],
+                    "builtin": "__rv_clrs32"
+                },
+                {
+                    "xlen": "64",
+                    "oprands": [
+                        "uint32x2_t",
+                        "int32x2_t"
+                    ],
+                    "builtin": "__rv_v_clrs32"
+                }
+            ]
+        },
+        {
+            "insn": "clz8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "clz16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "clz32",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "cmpeq8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "cmpeq16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "cras16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "crsa16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "insb",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kabs8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kabs16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kabsw",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kadd8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kadd16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kadd64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kaddh",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kaddw",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kcras16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kcrsa16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kdmbb",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kdmbt",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kdmtt",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kdmabb",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kdmabt",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kdmatt",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "khm8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "khmx8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "khm16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "khmx16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "khmbb",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "khmbt",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "khmtt",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmabb",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmabt",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmatt",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmada",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmaxda",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmads",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmadrs",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmaxds",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmar64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmda",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmxda",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmac",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmac.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmawb",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmawb.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmawb2",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmawb2.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmawt",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmawt.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmawt2",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmawt2.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmsb",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmsb.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmwb2",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmwb2.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmwt2",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmmwt2.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmsda",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmsxda",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kmsr64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ksllw",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kslliw",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ksll8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kslli8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ksll16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kslli16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kslra8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kslra8.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kslra16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kslra16.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kslraw",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kslraw.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kstas16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kstsa16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ksub8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ksub16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ksub64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ksubh",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ksubw",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kwmmul",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "kwmmul.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "maddr32",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "maxw",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "minw",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "msubr32",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "mulr64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "mulsr64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "pbsad",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "pbsada",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "pkbb16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "pkbt16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "pktt16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "pktb16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "radd8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "radd16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "radd64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "raddw",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "rcras16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "rcrsa16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "rdov",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "rstas16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "rstsa16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "rsub8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "rsub16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "rsub64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "rsubw",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sclip8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sclip16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sclip32",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "scmple8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "scmple16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "scmplt8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "scmplt16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sll8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "slli8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sll16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "slli16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smal",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smalbb",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smalbt",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smaltt",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smalda",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smalxda",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smalds",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smaldrs",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smalxds",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smar64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smaqa",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smaqa.su",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smax8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smax16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smbb16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smbt16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smtt16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smds",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smdrs",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smxds",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smin8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smin16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smmul",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smmul.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smmwb",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smmwb.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smmwt",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smmwt.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smslda",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smslxda",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smsr64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smul8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smulx8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smul16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "smulx16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sra.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "srai.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sra8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sra8.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "srai8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "srai8.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sra16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sra16.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "srai16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "srai16.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "srl8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "srl8.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "srli8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "srli8.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "srl16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "srl16.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "srli16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "srli16.u",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "stas16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "stsa16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sub8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sub16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sub64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sunpkd810",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sunpkd820",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sunpkd830",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sunpkd831",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "sunpkd832",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "swap8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "swap16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "uclip8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "uclip16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "uclip32",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ucmple8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ucmple16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ucmplt8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ucmplt16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ukadd8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ukadd16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ukadd64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ukaddh",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ukaddw",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ukcras16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ukcrsa16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ukmar64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ukmsr64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ukstas16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ukstsa16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "uksub8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "uksub16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "uksub64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "uksubh",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "uksubw",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "umar64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "umaqa",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "umax8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "umax16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "umin8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "umin16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "umsr64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "umul8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "umulx8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "umul16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "umulx16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "uradd8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "uradd16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "uradd64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "uraddw",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "urcras16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "urcrsa16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "urstas16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "urstsa16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ursub8",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ursub16",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ursub64",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "ursubw",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "wexti",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "wext",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "zunpkd810",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "zunpkd820",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "zunpkd830",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "zunpkd831",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        },
+        {
+            "insn": "zunpkd832",
+            "type": "",
+            "mode": [
+                {
+                    "xlen": 32,
+                    "oprands": [],
+                    "builtin": ""
+                }
+            ]
+        }
+    ]
+}
