@@ -254,6 +254,7 @@
 ;; rdvl        vector length vl csrr read
 ;; dsp     Digital Signal Processing (DSP) instructions
 ;; simd    simd in rvp extension
+;; psimd    partial-simd in rvp extension
 ;; dsp64   Digital Signal Processing (DSP) instructions for 64bits
 ;; vsetvl      vector configuration-setting instrucions
 ;; 7. Vector Loads and Stores
@@ -348,7 +349,7 @@
   "unknown,branch,jump,call,load,fpload,store,fpstore,
    mtc,mfc,const,arith,logical,shift,slt,imul,idiv,move,fmove,fadd,fmul,
    fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,ghost,bitmanip,rotate,
-   atomic,condmove,crypto,rdvlenb,rdvl,dsp,simd,dsp64,
+   atomic,condmove,crypto,rdvlenb,rdvl,dsp,simd,psimd,dsp64,
    vsetvl,vlde,vste,vldm,vstm,vlds,vsts,
    vldux,vldox,vstux,vstox,vldff,vldr,vstr,
    vialu,viwalu,vext,vicalu,vshift,vnshift,vicmp,viminmax,

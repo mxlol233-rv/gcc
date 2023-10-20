@@ -180,6 +180,10 @@ AVAIL (always,     (!0))
   RISCV_BUILTIN (INSN, #INSN, RISCV_BUILTIN_DIRECT_NO_TARGET,		\
 		FUNCTION_TYPE, AVAIL)
 
+#define DIRECT_NO_TARGET_BUILTIN_NO_PREFIX(INSN, NAME, FUNCTION_TYPE, AVAIL)			\
+  { CODE_FOR_ ## INSN, "__builtin_riscv_" # NAME,			\
+    RISCV_BUILTIN_DIRECT_NO_TARGET, FUNCTION_TYPE, riscv_builtin_avail_ ## AVAIL }
+
 /* Argument types.  */
 #define RISCV_ATYPE_VOID void_type_node
 #define RISCV_ATYPE_USI unsigned_intSI_type_node
