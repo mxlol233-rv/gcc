@@ -160,6 +160,8 @@ static const struct riscv_ext_version riscv_ext_version_table[] =
 
   {"h",       ISA_SPEC_CLASS_NONE, 1, 0},
 
+  {"p",     ISA_SPEC_CLASS_NONE, 0, 9},
+
   {"v",       ISA_SPEC_CLASS_NONE, 1, 0},
 
   {"zicsr", ISA_SPEC_CLASS_20191213, 2, 0},
@@ -250,6 +252,7 @@ static const struct riscv_ext_version riscv_combine_info[] =
   {"zk",  ISA_SPEC_CLASS_NONE, 1, 0},
   {"zkn",  ISA_SPEC_CLASS_NONE, 1, 0},
   {"zks",  ISA_SPEC_CLASS_NONE, 1, 0},
+  {"p",    ISA_SPEC_CLASS_NONE, 0, 9},
   /* Terminate the list.  */
   {NULL, ISA_SPEC_CLASS_NONE, 0, 0}
 };

@@ -1,13 +1,18 @@
 /* kmar64 also appears on filename, so scan-assembler-times plus 1 */
 /* This is a test program for add16 instruction.  */
 /* { dg-do compile { target riscv32*-*-* } } */
-/* { dg-options "-march=rv32gc_zpsfoperand -mabi=ilp32d -O0" } */
+/* { dg-options "-march=rv32gc_zpsfoperand -mabi=ilp32d -O1" } */
+/* { dg-final { check-function-bodies "**" "" "" } } */
 
 #include <rvp_intrinsic.h>
-#include <stdint.h>
 
 
-static __attribute__ ((noinline))
+/*
+**f0:
+** kmar64\ta[0-9], a[0-9], a[0-9]
+** ...
+*/
+
 int64_t f0 (int64_t x0, intXLEN_t x1, intXLEN_t x2){
 
     return __rv_kmar64(x0, x1, x2);
@@ -16,7 +21,12 @@ int64_t f0 (int64_t x0, intXLEN_t x1, intXLEN_t x2){
 
 
 
-static __attribute__ ((noinline))
+/*
+**f1:
+** kmar64\ta[0-9], a[0-9], a[0-9]
+** ...
+*/
+
 int64_t f1 (int64_t x0, int32x2_t x1, int32x2_t x2){
 
     return __rv_v_kmar64(x0, x1, x2);
@@ -25,7 +35,12 @@ int64_t f1 (int64_t x0, int32x2_t x1, int32x2_t x2){
 
 
 
-static __attribute__ ((noinline))
+/*
+**f2:
+** kmar64\ta[0-9], a[0-9], a[0-9]
+** ...
+*/
+
 uint64_t f2 (uint64_t x0, uint32x2_t x1, uint32x2_t x2){
 
     return __rv_v_ukmar64(x0, x1, x2);
@@ -33,6 +48,4 @@ uint64_t f2 (uint64_t x0, uint32x2_t x1, uint32x2_t x2){
 }
 
 
-/* { dg-final { scan-assembler-times "kmar64" 4 } } */
-/* { dg-final { scan-assembler-times "builtin_riscv" 0 } } */
 

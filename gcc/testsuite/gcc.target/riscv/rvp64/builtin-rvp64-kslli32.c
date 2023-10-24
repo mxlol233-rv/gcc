@@ -1,38 +1,51 @@
 /* kslli32 also appears on filename, so scan-assembler-times plus 1 */
 /* This is a test program for add16 instruction.  */
 /* { dg-do compile { target riscv64*-*-* } } */
-/* { dg-options "-march=rv64gc_zpn -mabi=lp64d -O0" } */
+/* { dg-options "-march=rv64gc_zpn -mabi=lp64d -O1" } */
+/* { dg-final { check-function-bodies "**" "" "" } } */
 
 #include <rvp_intrinsic.h>
-#include <stdint.h>
 
 
-static __attribute__ ((noinline))
+/*
+**f0:
+** kslli32\ta[0-9], a[0-9], a[0-9]
+** ...
+*/
+
 int64_t f0 (int64_t x0, uint32_t x1){
 
-    return __rv_ksll32(x0, x1);
+    return __rv_ksll32(x0, 1);
 
 }
 
 
 
-static __attribute__ ((noinline))
+/*
+**f1:
+** kslli32\ta[0-9], a[0-9], a[0-9]
+** ...
+*/
+
 int32x2_t f1 (int32x2_t x0, uint32_t x1){
 
-    return __rv_v_ksll32(x0, x1);
+    return __rv_v_ksll32(x0, 1);
 
 }
 
 
 
-static __attribute__ ((noinline))
+/*
+**f2:
+** kslli32\ta[0-9], a[0-9], a[0-9]
+** ...
+*/
+
 int32x2_t f2 (int32x2_t x0, uint32_t x1){
 
-    return __rv_v_ksll32(x0, x1);
+    return __rv_v_ksll32(x0, 1);
 
 }
 
 
-/* { dg-final { scan-assembler-times "kslli32" 4 } } */
-/* { dg-final { scan-assembler-times "builtin_riscv" 0 } } */
 

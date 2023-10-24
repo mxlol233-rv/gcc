@@ -1,13 +1,18 @@
 /* uradd8 also appears on filename, so scan-assembler-times plus 1 */
 /* This is a test program for add16 instruction.  */
 /* { dg-do compile { target riscv32*-*-* } } */
-/* { dg-options "-march=rv32gc_zpn -mabi=ilp32d -O0" } */
+/* { dg-options "-march=rv32gc_zpn -mabi=ilp32d -O1" } */
+/* { dg-final { check-function-bodies "**" "" "" } } */
 
 #include <rvp_intrinsic.h>
-#include <stdint.h>
 
 
-static __attribute__ ((noinline))
+/*
+**f0:
+** uradd8\ta[0-9], a[0-9], a[0-9]
+** ...
+*/
+
 uintXLEN_t f0 (uintXLEN_t x0, uintXLEN_t x1){
 
     return __rv_uradd8(x0, x1);
@@ -16,7 +21,12 @@ uintXLEN_t f0 (uintXLEN_t x0, uintXLEN_t x1){
 
 
 
-static __attribute__ ((noinline))
+/*
+**f1:
+** uradd8\ta[0-9], a[0-9], a[0-9]
+** ...
+*/
+
 uint8x4_t f1 (uint8x4_t x0, uint8x4_t x1){
 
     return __rv_v_uradd8(x0, x1);
@@ -24,6 +34,4 @@ uint8x4_t f1 (uint8x4_t x0, uint8x4_t x1){
 }
 
 
-/* { dg-final { scan-assembler-times "uradd8" 3 } } */
-/* { dg-final { scan-assembler-times "builtin_riscv" 0 } } */
 

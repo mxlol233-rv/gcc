@@ -1,13 +1,18 @@
 /* ksubw also appears on filename, so scan-assembler-times plus 1 */
 /* This is a test program for add16 instruction.  */
 /* { dg-do compile { target riscv32*-*-* } } */
-/* { dg-options "-march=rv32gc_zpn -mabi=ilp32d -O0" } */
+/* { dg-options "-march=rv32gc_zpn -mabi=ilp32d -O1" } */
+/* { dg-final { check-function-bodies "**" "" "" } } */
 
 #include <rvp_intrinsic.h>
-#include <stdint.h>
 
 
-static __attribute__ ((noinline))
+/*
+**f0:
+** ksubw\ta[0-9], a[0-9], a[0-9]
+** ...
+*/
+
 int32_t f0 (int32_t x0, int32_t x1){
 
     return __rv_ksubw(x0, x1);
@@ -15,6 +20,4 @@ int32_t f0 (int32_t x0, int32_t x1){
 }
 
 
-/* { dg-final { scan-assembler-times "ksubw" 2 } } */
-/* { dg-final { scan-assembler-times "builtin_riscv" 0 } } */
 
