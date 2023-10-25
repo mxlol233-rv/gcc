@@ -36,20 +36,6 @@ int8x8_t f2 (int8x8_t x0, uint32_t x1){
 
 
 /*
-**f3:
-** ksll8\ta[0-9], a[0-9], a[0-9]
-** ...
-*/
-
-int8x4_t f3 (int8x4_t x0, uint32_t x1){
-
-    return __rv_v_ksll8(x0, x1);
-
-}
-
-
-
-/*
 **f4:
 ** ksll8\ta[0-9], a[0-9], a[0-9]
 ** ...

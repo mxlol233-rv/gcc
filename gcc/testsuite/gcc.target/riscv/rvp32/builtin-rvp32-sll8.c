@@ -35,3 +35,17 @@ uint8x4_t f1 (uint8x4_t x0, uint32_t x1){
 
 
 
+/*
+**f3:
+** sll8\ta[0-9], a[0-9], a[0-9]
+** ...
+*/
+
+uint8x4_t f3 (uint8x4_t x0, uint32_t x1){
+
+    return __rv_v_sll8(x0, x1);
+
+}
+
+
+

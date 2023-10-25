@@ -16,7 +16,18 @@ along with GCC; see the file COPYING3.  If not see
 #ifndef _RISCV_RVP_INTRINSIC_H
 #define _RISCV_RVP_INTRINSIC_H
 
-#if !defined(__riscv_zpn)
+#define RVP_EXT_VALID 1
+
+#ifndef __riscv_zpn
+#ifndef __riscv_zpsfoperand
+#ifndef __riscv_zbpbo
+#undef RVP_EXT_VALID
+#define RVP_EXT_VALID 0
+#endif
+#endif
+#endif
+
+#if !RVP_EXT_VALID
 #error "Packed SIMD intrinsics require the rvp extension."
 #endif
 
@@ -103,6 +114,13 @@ typedef int8x8_t int8xN_t;
                               RVP_VECTOR_BUILTIN_PREFIX, RVP_EXPAND_ARGS,      \
                               RVP_EXPAND_VARS, __VA_ARGS__)
 
+#define CREATE_RVP_INTRINSIC_VECTOR_ALIAS(return_type, name, internal_name,    \
+                                          ...)                                 \
+  DIRECT_CREATE_RVP_INTRINSIC(return_type, name, internal_name,                \
+                              RVP_INTRINSIC_VECTOR_PREFIX,                     \
+                              RVP_VECTOR_BUILTIN_PREFIX, RVP_EXPAND_ARGS,      \
+                              RVP_EXPAND_VARS, __VA_ARGS__)
+
 #define DIRECT_CREATE_RVP_INTRINSIC(return_type, name, internal_name,          \
                                     intrisic_prefix, builtin_prefix,           \
                                     arg_expand_macro, var_expand_macro, ...)   \
@@ -114,6 +132,7 @@ typedef int8x8_t int8xN_t;
                       internal_name)(var_expand_macro(__VA_ARGS__));           \
   }
 
+#ifdef __riscv_zpn
 /* ZPN */
 CREATE_RVP_INTRINSIC(uintXLEN_t, add8, uintXLEN_t, uintXLEN_t)
 CREATE_RVP_INTRINSIC(uintXLEN_t, add16, uintXLEN_t, uintXLEN_t)
@@ -188,7 +207,10 @@ CREATE_RVP_INTRINSIC(intXLEN_t, kmsda, intXLEN_t, uintXLEN_t, uintXLEN_t)
 CREATE_RVP_INTRINSIC(intXLEN_t, kmsxda, intXLEN_t, uintXLEN_t, uintXLEN_t)
 CREATE_RVP_INTRINSIC(int32_t, ksllw, int32_t, const uint32_t)
 CREATE_RVP_INTRINSIC(uintXLEN_t, ksll8, uintXLEN_t, const uint32_t)
-CREATE_RVP_INTRINSIC(uintXLEN_t, ksll16, uintXLEN_t, const uint32_t)
+CREATE_RVP_INTRINSIC_ALIAS(uintXLEN_t, kslli8, ksll8, uintXLEN_t, uint32_t)
+CREATE_RVP_INTRINSIC(uintXLEN_t, ksll16, uintXLEN_t, uint32_t)
+CREATE_RVP_INTRINSIC_ALIAS(uintXLEN_t, kslli16, ksll16, uintXLEN_t,
+                           const uint32_t)
 CREATE_RVP_INTRINSIC(uintXLEN_t, kslra8, uintXLEN_t, const int32_t)
 CREATE_RVP_INTRINSIC(uintXLEN_t, kslra8_u, uintXLEN_t, const int32_t)
 CREATE_RVP_INTRINSIC(uintXLEN_t, kslra16, uintXLEN_t, const int32_t)
@@ -229,8 +251,11 @@ CREATE_RVP_INTRINSIC(uintXLEN_t, scmple8, uintXLEN_t, uintXLEN_t)
 CREATE_RVP_INTRINSIC(uintXLEN_t, scmple16, uintXLEN_t, uintXLEN_t)
 CREATE_RVP_INTRINSIC(uintXLEN_t, scmplt8, uintXLEN_t, uintXLEN_t)
 CREATE_RVP_INTRINSIC(uintXLEN_t, scmplt16, uintXLEN_t, uintXLEN_t)
-CREATE_RVP_INTRINSIC(uintXLEN_t, sll8, uintXLEN_t, const uint32_t)
+CREATE_RVP_INTRINSIC(uintXLEN_t, sll8, uintXLEN_t, uint32_t)
+CREATE_RVP_INTRINSIC_ALIAS(uintXLEN_t, slli8, sll8, uintXLEN_t, const uint32_t)
 CREATE_RVP_INTRINSIC(uintXLEN_t, sll16, uintXLEN_t, const uint32_t)
+CREATE_RVP_INTRINSIC_ALIAS(uintXLEN_t, slli16, sll16, uintXLEN_t,
+                           const uint32_t)
 CREATE_RVP_INTRINSIC(intXLEN_t, smaqa, intXLEN_t, uintXLEN_t, uintXLEN_t)
 CREATE_RVP_INTRINSIC(intXLEN_t, smaqa_su, intXLEN_t, uintXLEN_t, uintXLEN_t)
 CREATE_RVP_INTRINSIC(uintXLEN_t, smax8, uintXLEN_t, uintXLEN_t)
@@ -365,8 +390,12 @@ CREATE_RVP_INTRINSIC_VECTOR(int32xN_t, kmmwt2, int32xN_t, int16xN_t)
 CREATE_RVP_INTRINSIC_VECTOR(int32xN_t, kmmwt2_u, int32xN_t, int16xN_t)
 CREATE_RVP_INTRINSIC_VECTOR(int32xN_t, kmsda, int32xN_t, int16xN_t, int16xN_t)
 CREATE_RVP_INTRINSIC_VECTOR(int32xN_t, kmsxda, int32xN_t, int16xN_t, int16xN_t)
-CREATE_RVP_INTRINSIC_VECTOR(int8xN_t, ksll8, int8xN_t, const uint32_t)
-CREATE_RVP_INTRINSIC_VECTOR(int16xN_t, ksll16, int16xN_t, const uint32_t)
+CREATE_RVP_INTRINSIC_VECTOR(int8xN_t, ksll8, int8xN_t, uint32_t)
+CREATE_RVP_INTRINSIC_VECTOR_ALIAS(int8xN_t, kslli8, ksll8, int8xN_t,
+                                  const uint32_t)
+CREATE_RVP_INTRINSIC_VECTOR(int16xN_t, ksll16, int16xN_t, uint32_t)
+CREATE_RVP_INTRINSIC_VECTOR_ALIAS(int16xN_t, kslli16, ksll16, int16xN_t,
+                                  const uint32_t)
 CREATE_RVP_INTRINSIC_VECTOR(int8xN_t, kslra8, int8xN_t, int32_t)
 CREATE_RVP_INTRINSIC_VECTOR(int8xN_t, kslra8_u, int8xN_t, int32_t)
 CREATE_RVP_INTRINSIC_VECTOR(int16xN_t, kslra16, int16xN_t, int32_t)
@@ -396,8 +425,12 @@ CREATE_RVP_INTRINSIC_VECTOR(uint8xN_t, scmple8, int8xN_t, int8xN_t)
 CREATE_RVP_INTRINSIC_VECTOR(uint16xN_t, scmple16, int16xN_t, int16xN_t)
 CREATE_RVP_INTRINSIC_VECTOR(uint8xN_t, scmplt8, int8xN_t, int8xN_t)
 CREATE_RVP_INTRINSIC_VECTOR(uint16xN_t, scmplt16, int16xN_t, int16xN_t)
-CREATE_RVP_INTRINSIC_VECTOR(uint8xN_t, sll8, uint8xN_t, const uint32_t)
+CREATE_RVP_INTRINSIC_VECTOR(uint8xN_t, sll8, uint8xN_t, uint32_t)
+CREATE_RVP_INTRINSIC_VECTOR_ALIAS(uint8xN_t, slli8, sll8, uint8xN_t,
+                                  const uint32_t)
 CREATE_RVP_INTRINSIC_VECTOR(uint16xN_t, sll16, uint16xN_t, const uint32_t)
+CREATE_RVP_INTRINSIC_VECTOR_ALIAS(uint16xN_t, slli16, sll16, uint16xN_t,
+                                  const uint32_t)
 CREATE_RVP_INTRINSIC_VECTOR(int32xN_t, smaqa, int32xN_t, int8xN_t, int8xN_t)
 CREATE_RVP_INTRINSIC_VECTOR(int32xN_t, smaqa_su, int32xN_t, int8xN_t, uint8xN_t)
 CREATE_RVP_INTRINSIC_VECTOR(int8xN_t, smax8, int8xN_t, int8xN_t)
@@ -481,9 +514,11 @@ __extension__ extern __inline
     __rv_v_swap16(uint16xN_t a) {
   return RVP_CONCAT(RVP_VECTOR_BUILTIN_PREFIX, pkbt16)(a, a);
 }
+#endif
 
 /* ZPN64 ONLY */
 #if __riscv_xlen == 64
+#ifdef __riscv_zpn
 CREATE_RVP_INTRINSIC(int32_t, sraw_u, int32_t, const uint32_t)
 CREATE_RVP_INTRINSIC(int32x2_t, v_kabs32, int32x2_t)
 CREATE_RVP_INTRINSIC(int32x2_t, v_kadd32, int32x2_t, int32x2_t)
@@ -626,6 +661,7 @@ CREATE_RVP_INTRINSIC(int64_t, rstas32, int64_t, int64_t)
 CREATE_RVP_INTRINSIC(int64_t, rstsa32, int64_t, int64_t)
 CREATE_RVP_INTRINSIC(int64_t, rsub32, int64_t, int64_t)
 CREATE_RVP_INTRINSIC(int64_t, sll32, int64_t, const uint32_t)
+CREATE_RVP_INTRINSIC_ALIAS(int64_t, slli32, sll32, int64_t, const uint32_t)
 CREATE_RVP_INTRINSIC(int64_t, smax32, int64_t, int64_t)
 CREATE_RVP_INTRINSIC(int64_t, smin32, int64_t, int64_t)
 CREATE_RVP_INTRINSIC(int64_t, sra32, int64_t, const uint32_t)
@@ -650,8 +686,9 @@ CREATE_RVP_INTRINSIC(uint64_t, urstas32, uint64_t, uint64_t)
 CREATE_RVP_INTRINSIC(uint64_t, urstsa32, uint64_t, uint64_t)
 CREATE_RVP_INTRINSIC(uint64_t, ursub32, uint64_t, uint64_t)
 #endif
+#endif
 
-#if defined(__riscv_zpsf)
+#if defined(__riscv_zpsfoperand)
 
 #if !defined(__riscv_zbpbo)
 /* wext/wexti are forbidden with using zbpbo subextension */

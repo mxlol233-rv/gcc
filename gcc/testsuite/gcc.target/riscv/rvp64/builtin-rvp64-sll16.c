@@ -36,20 +36,6 @@ uint16x4_t f2 (uint16x4_t x0, uint32_t x1){
 
 
 /*
-**f3:
-** sll16\ta[0-9], a[0-9], a[0-9]
-** ...
-*/
-
-uint16x2_t f3 (uint16x2_t x0, uint32_t x1){
-
-    return __rv_v_sll16(x0, x1);
-
-}
-
-
-
-/*
 **f4:
 ** sll16\ta[0-9], a[0-9], a[0-9]
 ** ...

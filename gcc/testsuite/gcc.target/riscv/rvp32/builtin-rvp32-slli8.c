@@ -9,13 +9,13 @@
 
 /*
 **f0:
-** slli8\ta[0-9], a[0-9], a[0-9]
+** slli8\ta[0-9], a[0-9], 1
 ** ...
 */
 
 uintXLEN_t f0 (uintXLEN_t x0, uint32_t x1){
 
-    return __rv_sll8(x0, 1);
+    return __rv_slli8(x0, 1);
 
 }
 
@@ -23,13 +23,27 @@ uintXLEN_t f0 (uintXLEN_t x0, uint32_t x1){
 
 /*
 **f1:
-** slli8\ta[0-9], a[0-9], a[0-9]
+** slli8\ta[0-9], a[0-9], 1
 ** ...
 */
 
 uint8x4_t f1 (uint8x4_t x0, uint32_t x1){
 
-    return __rv_v_sll8(x0, 1);
+    return __rv_v_slli8(x0, 1);
+
+}
+
+
+
+/*
+**f3:
+** slli8\ta[0-9], a[0-9], 1
+** ...
+*/
+
+uint8x4_t f3 (uint8x4_t x0, uint32_t x1){
+
+    return __rv_v_slli8(x0, 1);
 
 }
 

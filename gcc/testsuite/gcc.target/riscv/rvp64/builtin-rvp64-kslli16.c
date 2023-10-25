@@ -9,13 +9,13 @@
 
 /*
 **f0:
-** kslli16\ta[0-9], a[0-9], a[0-9]
+** kslli16\ta[0-9], a[0-9], 1
 ** ...
 */
 
 uintXLEN_t f0 (uintXLEN_t x0, uint32_t x1){
 
-    return __rv_ksll16(x0, 1);
+    return __rv_kslli16(x0, 1);
 
 }
 
@@ -23,27 +23,13 @@ uintXLEN_t f0 (uintXLEN_t x0, uint32_t x1){
 
 /*
 **f2:
-** kslli16\ta[0-9], a[0-9], a[0-9]
+** kslli16\ta[0-9], a[0-9], 1
 ** ...
 */
 
 int16x4_t f2 (int16x4_t x0, uint32_t x1){
 
-    return __rv_v_ksll16(x0, 1);
-
-}
-
-
-
-/*
-**f3:
-** kslli16\ta[0-9], a[0-9], a[0-9]
-** ...
-*/
-
-int16x2_t f3 (int16x2_t x0, uint32_t x1){
-
-    return __rv_v_ksll16(x0, 1);
+    return __rv_v_kslli16(x0, 1);
 
 }
 
@@ -51,13 +37,13 @@ int16x2_t f3 (int16x2_t x0, uint32_t x1){
 
 /*
 **f4:
-** kslli16\ta[0-9], a[0-9], a[0-9]
+** kslli16\ta[0-9], a[0-9], 1
 ** ...
 */
 
 int16x4_t f4 (int16x4_t x0, uint32_t x1){
 
-    return __rv_v_ksll16(x0, 1);
+    return __rv_v_kslli16(x0, 1);
 
 }
 
