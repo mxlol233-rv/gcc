@@ -1,7 +1,6 @@
-/* kdmabb16 also appears on filename, so scan-assembler-times plus 1 */
-/* This is a test program for add16 instruction.  */
+/* This is a test program for kdmabb16 instruction.  */
 /* { dg-do compile { target riscv64*-*-* } } */
-/* { dg-options "-march=rv64gc_zpn -mabi=lp64d -O1" } */
+/* { dg-options "-march=rv64gc_zpn -mabi=lp64d -O3" } */
 /* { dg-final { check-function-bodies "**" "" "" } } */
 
 #include <rvp_intrinsic.h>

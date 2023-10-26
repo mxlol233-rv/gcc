@@ -41,6 +41,8 @@
   UNSPEC_KDMBB
   UNSPEC_KHM
   UNSPEC_KHMX
+  UNSPEC_RADDW
+  UNSPEC_RSUBW
   UNSPEC_ROUND
   UNSPEC_KMMWU
   UNSPEC_KMMW
@@ -336,13 +338,50 @@
   [(set_attr "type" "simd")
    (set_attr "mode" "<MODE>")])
 
+(define_insn "rvp_kaddw"
+  [(set (match_operand:SI 0 "register_operand" "=r")
+	(unspec:SI [(match_operand:SI 1 "register_operand" "r")
+		    (match_operand:SI 2 "register_operand" "r")] UNSPEC_KADDW))]
+  "TARGET_ZPN"
+  "kaddw\t%0, %1, %2"
+  [(set_attr "type"    "dsp")]
+)
+
+(define_insn "rvp_ksubw"
+  [(set (match_operand:SI 0 "register_operand" "=r")
+	(unspec:SI [(match_operand:SI 1 "register_operand" "r")
+		    (match_operand:SI 2 "register_operand" "r")] UNSPEC_KSUBW))]
+  "TARGET_ZPN"
+  "ksubw\t%0, %1, %2"
+  [(set_attr "type"    "dsp")]
+)
+
+
+(define_insn "rvp_ukaddw"
+  [(set (match_operand:SI 0 "register_operand" "=r")
+	(unspec:SI [(match_operand:SI 1 "register_operand" "r")
+		    (match_operand:SI 2 "register_operand" "r")] UNSPEC_UKADDW))]
+  "TARGET_ZPN"
+  "ukaddw\t%0, %1, %2"
+  [(set_attr "type"    "dsp")]
+)
+
+(define_insn "rvp_uksubw"
+  [(set (match_operand:SI 0 "register_operand" "=r")
+	(unspec:SI [(match_operand:SI 1 "register_operand" "r")
+		    (match_operand:SI 2 "register_operand" "r")] UNSPEC_UKSUBW))]
+  "TARGET_ZPN"
+  "uksubw\t%0, %1, %2"
+  [(set_attr "type"    "dsp")]
+)
+
 ;; add64/sub64
 (define_insn "*add64_rvp"
   [(set (match_operand:DI          0 "register_operand" "=r")
 	(plus:DI (match_operand:DI 1 "register_operand" " r")
 		 (match_operand:DI 2 "register_operand" " r")))]
   "!TARGET_64BIT && TARGET_ZPSFOPERAND"
-  "add64\t%0,%1,%2"
+  "add64\t%0, %1, %2"
   [(set_attr "type" "arith")
    (set_attr "mode" "DI")])
 
@@ -445,6 +484,21 @@
   [(set_attr "type"   "dsp")
    (set_attr "mode"   "SI")])
 
+;; bpick
+(define_insn "bpick<X:mode>"
+  [(set (match_operand:X 0 "register_operand"       "=r")
+	  (ior:X
+	    (and:X
+	      (match_operand:X 1 "register_operand" " r")
+	      (match_operand:X 3 "register_operand" " r"))
+	    (and:X
+	      (match_operand:X 2 "register_operand" " r")
+	      (not:X (match_dup 3)))))]
+  "TARGET_ZPN && !TARGET_ZBPBO"
+  "bpick\t%0, %3, %1, %2"
+  [(set_attr "type"   "dsp")
+   (set_attr "mode"   "<MODE>")])
+
 ;; cmix
 (define_insn "cmix<X:mode>"
   [(set (match_operand:X 0 "register_operand"       "=r")
@@ -464,7 +518,7 @@
 (define_insn "clrov<X:mode>"
   [(unspec_volatile:X [(const_int 0)] UNSPEC_CLROV)]
   "TARGET_ZPN"
-  "csrrci zero, vxsat, 1"
+  "csrrci\tzero, vxsat, 1"
   [(set_attr "mode" "<MODE>")])
 
 ;; clrs, clz
@@ -3446,6 +3500,19 @@
   [(set_attr "type" "simd")
    (set_attr "mode" "<MODE>")])
 
+;; raddw
+(define_insn "rvp_addw"
+  [(set (match_operand:SI 0 "register_operand" "=r")
+	(truncate:SI
+	  (ashiftrt:DI
+	    (plus:DI (sign_extend:DI (match_operand:SI 1 "register_operand" " r"))
+			 (sign_extend:DI (match_operand:SI 2 "register_operand" " r")))
+	    (const_int 1))))]
+  "TARGET_ZPN"
+  "raddw\t%0, %1, %2"
+  [(set_attr "type" "simd")
+  (set_attr "mode" "SI")])
+
 ;; radd64
 (define_insn "radddi3"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -3470,6 +3537,8 @@
   "uradd<bits>\t%0, %1, %2"
   [(set_attr "type" "simd")
    (set_attr "mode" "<MODE>")])
+
+
 
 ;; uradd64
 (define_insn "uradddi3"
@@ -3507,6 +3576,28 @@
   "ursub<bits>\t%0, %1, %2"
   [(set_attr "type" "simd")
    (set_attr "mode" "<MODE>")])
+
+;; raddw
+(define_insn "rvp_raddw"
+  [(set (match_operand:SI 0 "register_operand"                   "=r")
+	(unspec:SI
+	  [(match_operand:SI 1 "register_operand" " r")
+		(match_operand:SI 2 "register_operand" " r")] UNSPEC_RADDW))]
+  "TARGET_ZPN"
+  "raddw\t%0, %1, %2"
+  [(set_attr "type" "dsp64")
+   (set_attr "mode" "SI")])
+
+;; rsubw
+(define_insn "rvp_rsubw"
+  [(set (match_operand:SI 0 "register_operand"                   "=r")
+	(unspec:SI
+	  [(match_operand:SI 1 "register_operand" " r")
+		(match_operand:SI 2 "register_operand" " r")] UNSPEC_RSUBW))]
+  "TARGET_ZPN"
+  "rsubw\t%0, %1, %2"
+  [(set_attr "type" "dsp64")
+   (set_attr "mode" "SI")])
 
 ;; rsub64
 (define_insn "rsubdi3"
@@ -3565,7 +3656,7 @@
   [(set (match_operand:X 0 "register_operand" "=r")
 	(unspec_volatile:X [(const_int 0)] UNSPEC_RDOV))]
   "TARGET_ZPN"
-  "csrr \t%0, vxsat, zero"
+  "csrr\t%0, vxsat, zero"
   [(set_attr "type" "dsp")
    (set_attr "mode" "<MODE>")])
 
@@ -7024,7 +7115,7 @@
 		(match_operand:SI 2 "register_operand" "r")
 		(match_operand:SI 3 "register_operand" "r")] UNSPEC_FSRW))]
   "TARGET_ZBPBO && TARGET_64BIT"
-  "fsrw\t%0,%1,%2,%3"
+  "fsrw\t%0, %1, %2, %3"
   [(set_attr "type" "dsp")
    (set_attr "mode" "SI")])
 

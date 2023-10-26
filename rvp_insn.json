@@ -297,13 +297,12 @@
       "intrinsics": [
         {
           "is_imm": [
-            "N",
             "N"
           ],
-          "n_operand": -1,
+          "asm": "csrrci\tzero, vxsat, 1",
+          "n_operand": 0,
           "name": "__rv_clrov",
           "types": [
-            "void",
             "void"
           ],
           "xlen": "*"
@@ -3002,7 +3001,7 @@
             "N",
             "N"
           ],
-          "n_operand": -1,
+          "n_operand": 3,
           "name": "__rv_kmmawt_u",
           "types": [
             "intXLEN_t",
@@ -3019,7 +3018,7 @@
             "N",
             "N"
           ],
-          "n_operand": -1,
+          "n_operand": 3,
           "name": "__rv_v_kmmawt_u",
           "types": [
             "int32_t",
@@ -3036,7 +3035,7 @@
             "N",
             "N"
           ],
-          "n_operand": -1,
+          "n_operand": 3,
           "name": "__rv_v_kmmawt_u",
           "types": [
             "int32x2_t",
@@ -4627,50 +4626,6 @@
     },
     {
       "extension": "zpn",
-      "insn": "maxw",
-      "intrinsics": [
-        {
-          "is_imm": [
-            "N",
-            "N",
-            "N"
-          ],
-          "n_operand": 3,
-          "name": "__rv_maxw",
-          "types": [
-            "int32_t",
-            "int32_t",
-            "int32_t"
-          ],
-          "xlen": "*"
-        }
-      ],
-      "type": "DSP"
-    },
-    {
-      "extension": "zpn",
-      "insn": "minw",
-      "intrinsics": [
-        {
-          "is_imm": [
-            "N",
-            "N",
-            "N"
-          ],
-          "n_operand": 3,
-          "name": "__rv_minw",
-          "types": [
-            "int32_t",
-            "int32_t",
-            "int32_t"
-          ],
-          "xlen": "*"
-        }
-      ],
-      "type": "DSP"
-    },
-    {
-      "extension": "zpn",
       "insn": "msubr32",
       "intrinsics": [
         {
@@ -4718,6 +4673,7 @@
     {
       "extension": "zpsfoperand",
       "insn": "mulsr64",
+      "opt_level": "0",
       "intrinsics": [
         {
           "is_imm": [
@@ -5313,14 +5269,13 @@
       "intrinsics": [
         {
           "is_imm": [
-            "N",
             "N"
           ],
-          "n_operand": -1,
+          "asm": "csrr\\ta0, vxsat, zero",
+          "n_operand": 1,
           "name": "__rv_rdov",
           "types": [
-            "uintXLEN_t",
-            "void"
+            "uintXLEN_t"
           ],
           "xlen": "*"
         }
@@ -8142,7 +8097,7 @@
             "int8x4_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -8224,7 +8179,7 @@
             "int8x4_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -8255,7 +8210,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_sra8",
+          "name": "__rv_srai8",
           "types": [
             "uintXLEN_t",
             "uintXLEN_t",
@@ -8270,7 +8225,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra8",
+          "name": "__rv_v_srai8",
           "types": [
             "int8x4_t",
             "int8x4_t",
@@ -8285,7 +8240,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra8",
+          "name": "__rv_v_srai8",
           "types": [
             "int8x8_t",
             "int8x8_t",
@@ -8300,13 +8255,13 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra8",
+          "name": "__rv_v_srai8",
           "types": [
             "int8x4_t",
             "int8x4_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -8315,7 +8270,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra8",
+          "name": "__rv_v_srai8",
           "types": [
             "int8x8_t",
             "int8x8_t",
@@ -8337,7 +8292,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_sra8_u",
+          "name": "__rv_srai8_u",
           "types": [
             "uintXLEN_t",
             "uintXLEN_t",
@@ -8352,7 +8307,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra8_u",
+          "name": "__rv_v_srai8_u",
           "types": [
             "int8x4_t",
             "int8x4_t",
@@ -8367,7 +8322,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra8_u",
+          "name": "__rv_v_srai8_u",
           "types": [
             "int8x8_t",
             "int8x8_t",
@@ -8382,13 +8337,13 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra8_u",
+          "name": "__rv_v_srai8_u",
           "types": [
             "int8x4_t",
             "int8x4_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -8397,7 +8352,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra8_u",
+          "name": "__rv_v_srai8_u",
           "types": [
             "int8x8_t",
             "int8x8_t",
@@ -8470,7 +8425,7 @@
             "int16x2_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -8552,7 +8507,7 @@
             "int16x2_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -8583,7 +8538,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_sra16",
+          "name": "__rv_srai16",
           "types": [
             "uintXLEN_t",
             "uintXLEN_t",
@@ -8598,7 +8553,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra16",
+          "name": "__rv_v_srai16",
           "types": [
             "int16x2_t",
             "int16x2_t",
@@ -8613,7 +8568,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra16",
+          "name": "__rv_v_srai16",
           "types": [
             "int16x4_t",
             "int16x4_t",
@@ -8628,13 +8583,13 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra16",
+          "name": "__rv_v_srai16",
           "types": [
             "int16x2_t",
             "int16x2_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -8643,7 +8598,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra16",
+          "name": "__rv_v_srai16",
           "types": [
             "int16x4_t",
             "int16x4_t",
@@ -8665,7 +8620,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_sra16_u",
+          "name": "__rv_srai16_u",
           "types": [
             "uintXLEN_t",
             "uintXLEN_t",
@@ -8680,7 +8635,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra16_u",
+          "name": "__rv_v_srai16_u",
           "types": [
             "int16x2_t",
             "int16x2_t",
@@ -8695,7 +8650,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra16_u",
+          "name": "__rv_v_srai16_u",
           "types": [
             "int16x4_t",
             "int16x4_t",
@@ -8710,13 +8665,13 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra16_u",
+          "name": "__rv_v_srai16_u",
           "types": [
             "int16x2_t",
             "int16x2_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -8725,7 +8680,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_v_sra16_u",
+          "name": "__rv_v_srai16_u",
           "types": [
             "int16x4_t",
             "int16x4_t",
@@ -8798,7 +8753,7 @@
             "uint8x4_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -8880,7 +8835,7 @@
             "uint8x4_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -8962,7 +8917,7 @@
             "uint8x4_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -9044,7 +8999,7 @@
             "uint8x4_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -9126,7 +9081,7 @@
             "uint16x2_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -9208,7 +9163,7 @@
             "uint16x2_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -9290,7 +9245,7 @@
             "uint16x2_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -9372,7 +9327,7 @@
             "uint16x2_t",
             "uint32_t"
           ],
-          "xlen": "64"
+          "xlen": "32"
         },
         {
           "is_imm": [
@@ -10042,6 +9997,7 @@
             "N",
             "N"
           ],
+          "asm": "pkbt16\\ta[0-9], a[0-9], a[0-9]",
           "n_operand": 2,
           "name": "__rv_swap16",
           "types": [
@@ -10056,6 +10012,7 @@
             "N"
           ],
           "n_operand": 2,
+          "asm": "pkbt16\\ta[0-9], a[0-9], a[0-9]",
           "name": "__rv_v_swap16",
           "types": [
             "uint16x2_t",
@@ -10069,6 +10026,7 @@
             "N"
           ],
           "n_operand": 2,
+          "asm": "pkbt16\\ta[0-9], a[0-9], a[0-9]",
           "name": "__rv_v_swap16",
           "types": [
             "uint16x4_t",
@@ -12061,6 +12019,7 @@
     {
       "extension": "zpsfoperand",
       "insn": "wexti",
+      "opt_level": "0",
       "intrinsics": [
         {
           "is_imm": [
@@ -12069,7 +12028,7 @@
             "Y"
           ],
           "n_operand": 3,
-          "name": "__rv_wext",
+          "name": "__rv_wexti",
           "types": [
             "intXLEN_t",
             "uint64_t",
@@ -12081,7 +12040,7 @@
       "type": "DSP"
     },
     {
-      "extension": "zpn",
+      "extension": "zpsfoperand",
       "insn": "wext",
       "intrinsics": [
         {
@@ -12554,21 +12513,6 @@
             "int32x2_t"
           ],
           "xlen": "64"
-        },
-        {
-          "is_imm": [
-            "N",
-            "N",
-            "N"
-          ],
-          "n_operand": 3,
-          "name": "__rv_v_ukadd32",
-          "types": [
-            "uint32x2_t",
-            "uint32x2_t",
-            "uint32x2_t"
-          ],
-          "xlen": "64"
         }
       ],
       "type": "SIMD (RV64 Only)"
@@ -12606,21 +12550,6 @@
             "int32x2_t"
           ],
           "xlen": "64"
-        },
-        {
-          "is_imm": [
-            "N",
-            "N",
-            "N"
-          ],
-          "n_operand": 3,
-          "name": "__rv_v_ukcras32",
-          "types": [
-            "uint32x2_t",
-            "uint32x2_t",
-            "uint32x2_t"
-          ],
-          "xlen": "64"
         }
       ],
       "type": "SIMD (RV64 Only)"
@@ -12656,21 +12585,6 @@
             "int32x2_t",
             "int32x2_t",
             "int32x2_t"
-          ],
-          "xlen": "64"
-        },
-        {
-          "is_imm": [
-            "N",
-            "N",
-            "N"
-          ],
-          "n_operand": 3,
-          "name": "__rv_v_ukcrsa32",
-          "types": [
-            "uint32x2_t",
-            "uint32x2_t",
-            "uint32x2_t"
           ],
           "xlen": "64"
         }
@@ -13146,8 +13060,9 @@
       "type": "DSP (RV64 Only)"
     },
     {
-      "extension": "zpn64",
+      "extension": "zpsfoperand",
       "insn": "kmada32",
+      "alias": "kmar64",
       "intrinsics": [
         {
           "is_imm": [
@@ -13717,21 +13632,6 @@
             "int32x2_t"
           ],
           "xlen": "64"
-        },
-        {
-          "is_imm": [
-            "N",
-            "N",
-            "N"
-          ],
-          "n_operand": 3,
-          "name": "__rv_v_ukstas32",
-          "types": [
-            "uint32x2_t",
-            "uint32x2_t",
-            "uint32x2_t"
-          ],
-          "xlen": "64"
         }
       ],
       "type": "SIMD (RV64 Only)"
@@ -13769,21 +13669,6 @@
             "int32x2_t"
           ],
           "xlen": "64"
-        },
-        {
-          "is_imm": [
-            "N",
-            "N",
-            "N"
-          ],
-          "n_operand": 3,
-          "name": "__rv_v_ukstsa32",
-          "types": [
-            "uint32x2_t",
-            "uint32x2_t",
-            "uint32x2_t"
-          ],
-          "xlen": "64"
         }
       ],
       "type": "SIMD (RV64 Only)"
@@ -13819,21 +13704,6 @@
             "int32x2_t",
             "int32x2_t",
             "int32x2_t"
-          ],
-          "xlen": "64"
-        },
-        {
-          "is_imm": [
-            "N",
-            "N",
-            "N"
-          ],
-          "n_operand": 3,
-          "name": "__rv_v_uksub32",
-          "types": [
-            "uint32x2_t",
-            "uint32x2_t",
-            "uint32x2_t"
           ],
           "xlen": "64"
         }
@@ -14021,21 +13891,6 @@
             "int32x2_t"
           ],
           "xlen": "64"
-        },
-        {
-          "is_imm": [
-            "N",
-            "N",
-            "N"
-          ],
-          "n_operand": 3,
-          "name": "__rv_v_uradd32",
-          "types": [
-            "uint32x2_t",
-            "uint32x2_t",
-            "uint32x2_t"
-          ],
-          "xlen": "64"
         }
       ],
       "type": "SIMD (RV64 Only)"
@@ -14071,21 +13926,6 @@
             "int32x2_t",
             "int32x2_t",
             "int32x2_t"
-          ],
-          "xlen": "64"
-        },
-        {
-          "is_imm": [
-            "N",
-            "N",
-            "N"
-          ],
-          "n_operand": 3,
-          "name": "__rv_v_urcras32",
-          "types": [
-            "uint32x2_t",
-            "uint32x2_t",
-            "uint32x2_t"
           ],
           "xlen": "64"
         }
@@ -14125,21 +13965,6 @@
             "int32x2_t"
           ],
           "xlen": "64"
-        },
-        {
-          "is_imm": [
-            "N",
-            "N",
-            "N"
-          ],
-          "n_operand": 3,
-          "name": "__rv_v_urcrsa32",
-          "types": [
-            "uint32x2_t",
-            "uint32x2_t",
-            "uint32x2_t"
-          ],
-          "xlen": "64"
         }
       ],
       "type": "SIMD (RV64 Only)"
@@ -14175,21 +14000,6 @@
             "int32x2_t",
             "int32x2_t",
             "int32x2_t"
-          ],
-          "xlen": "64"
-        },
-        {
-          "is_imm": [
-            "N",
-            "N",
-            "N"
-          ],
-          "n_operand": 3,
-          "name": "__rv_v_urstas32",
-          "types": [
-            "uint32x2_t",
-            "uint32x2_t",
-            "uint32x2_t"
           ],
           "xlen": "64"
         }
@@ -14229,21 +14039,6 @@
             "int32x2_t"
           ],
           "xlen": "64"
-        },
-        {
-          "is_imm": [
-            "N",
-            "N",
-            "N"
-          ],
-          "n_operand": 3,
-          "name": "__rv_v_urstsa32",
-          "types": [
-            "uint32x2_t",
-            "uint32x2_t",
-            "uint32x2_t"
-          ],
-          "xlen": "64"
         }
       ],
       "type": "SIMD (RV64 Only)"
@@ -14279,21 +14074,6 @@
             "int32x2_t",
             "int32x2_t",
             "int32x2_t"
-          ],
-          "xlen": "64"
-        },
-        {
-          "is_imm": [
-            "N",
-            "N",
-            "N"
-          ],
-          "n_operand": 3,
-          "name": "__rv_v_ursub32",
-          "types": [
-            "uint32x2_t",
-            "uint32x2_t",
-            "uint32x2_t"
           ],
           "xlen": "64"
         }
@@ -15310,6 +15090,21 @@
             "uint64_t",
             "uint64_t",
             "uint64_t"
+          ],
+          "xlen": "64"
+        },
+        {
+          "is_imm": [
+            "N",
+            "N",
+            "N"
+          ],
+          "n_operand": 3,
+          "name": "__rv_v_ukadd32",
+          "types": [
+            "uint32x2_t",
+            "uint32x2_t",
+            "uint32x2_t"
           ],
           "xlen": "64"
         },

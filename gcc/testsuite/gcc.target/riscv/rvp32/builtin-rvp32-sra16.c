@@ -1,7 +1,6 @@
-/* sra16 also appears on filename, so scan-assembler-times plus 1 */
-/* This is a test program for add16 instruction.  */
+/* This is a test program for sra16 instruction.  */
 /* { dg-do compile { target riscv32*-*-* } } */
-/* { dg-options "-march=rv32gc_zpn -mabi=ilp32d -O1" } */
+/* { dg-options "-march=rv32gc_zpn -mabi=ilp32d -O3" } */
 /* { dg-final { check-function-bodies "**" "" "" } } */
 
 #include <rvp_intrinsic.h>
@@ -28,6 +27,20 @@ uintXLEN_t f0 (uintXLEN_t x0, uint32_t x1){
 */
 
 int16x2_t f1 (int16x2_t x0, uint32_t x1){
+
+    return __rv_v_sra16(x0, x1);
+
+}
+
+
+
+/*
+**f3:
+** sra16\ta[0-9], a[0-9], a[0-9]
+** ...
+*/
+
+int16x2_t f3 (int16x2_t x0, uint32_t x1){
 
     return __rv_v_sra16(x0, x1);
 
