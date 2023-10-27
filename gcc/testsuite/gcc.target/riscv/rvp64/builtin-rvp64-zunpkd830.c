@@ -8,7 +8,7 @@
 
 /*
 **f0:
-** zunpkd830\ta[0-9], a[0-9]
+** zunpkd830\ta[0-9],a[0-9]
 ** ...
 */
 
@@ -22,7 +22,7 @@ uintXLEN_t f0 (uintXLEN_t x0){
 
 /*
 **f2:
-** zunpkd830\ta[0-9], a[0-9]
+** zunpkd830\ta[0-9],a[0-9]
 ** ...
 */
 

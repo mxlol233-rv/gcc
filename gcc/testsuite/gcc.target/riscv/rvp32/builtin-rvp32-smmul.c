@@ -8,27 +8,13 @@
 
 /*
 **f0:
-** smmul\ta[0-9], a[0-9], a[0-9]
+** smmul\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
 intXLEN_t f0 (intXLEN_t x0, intXLEN_t x1){
 
     return __rv_smmul(x0, x1);
-
-}
-
-
-
-/*
-**f1:
-** smmul\ta[0-9], a[0-9], a[0-9]
-** ...
-*/
-
-int32x2_t f1 (int32x2_t x0, int32x2_t x1){
-
-    return __rv_v_smmul(x0, x1);
 
 }
 

@@ -8,7 +8,7 @@
 
 /*
 **f0:
-** smmwb.u\ta[0-9], a[0-9], a[0-9]
+** smmwb.u\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
@@ -22,7 +22,7 @@ intXLEN_t f0 (intXLEN_t x0, uintXLEN_t x1){
 
 /*
 **f1:
-** smmwb.u\ta[0-9], a[0-9], a[0-9]
+** smmwb.u\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 

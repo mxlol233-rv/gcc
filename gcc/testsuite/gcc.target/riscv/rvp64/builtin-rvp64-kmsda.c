@@ -8,7 +8,7 @@
 
 /*
 **f0:
-** kmsda\ta[0-9], a[0-9], a[0-9]
+** kmsda\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
@@ -22,7 +22,7 @@ intXLEN_t f0 (intXLEN_t x0, uintXLEN_t x1, uintXLEN_t x2){
 
 /*
 **f2:
-** kmsda\ta[0-9], a[0-9], a[0-9]
+** kmsda\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 

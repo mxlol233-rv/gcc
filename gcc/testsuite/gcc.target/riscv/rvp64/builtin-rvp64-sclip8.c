@@ -8,7 +8,7 @@
 
 /*
 **f0:
-** sclip8\ta[0-9], a[0-9], 1
+** sclip8\ta[0-9],a[0-9],1
 ** ...
 */
 
@@ -22,7 +22,7 @@ uintXLEN_t f0 (uintXLEN_t x0, uint32_t x1){
 
 /*
 **f2:
-** sclip8\ta[0-9], a[0-9], 1
+** sclip8\ta[0-9],a[0-9],1
 ** ...
 */
 

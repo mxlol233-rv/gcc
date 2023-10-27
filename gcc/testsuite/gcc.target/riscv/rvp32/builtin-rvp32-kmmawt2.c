@@ -8,7 +8,7 @@
 
 /*
 **f0:
-** kmmawt2\ta[0-9], a[0-9], a[0-9]
+** kmmawt2\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
@@ -22,7 +22,7 @@ intXLEN_t f0 (intXLEN_t x0, intXLEN_t x1, uintXLEN_t x2){
 
 /*
 **f1:
-** kmmawt2\ta[0-9], a[0-9], a[0-9]
+** kmmawt2\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 

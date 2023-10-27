@@ -8,7 +8,7 @@
 
 /*
 **f0:
-** kmmac.u\ta[0-9], a[0-9], a[0-9]
+** kmmac.u\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
@@ -22,7 +22,7 @@ intXLEN_t f0 (intXLEN_t x0, intXLEN_t x1, intXLEN_t x2){
 
 /*
 **f1:
-** kmmac.u\ta[0-9], a[0-9], a[0-9]
+** kmmac.u\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 

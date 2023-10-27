@@ -7,12 +7,12 @@
 
 
 /*
-**f0:
-** rsub64\ta[0-9], a[0-9], a[0-9]
+**f1:
+** rsub64\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
-int64_t f0 (int64_t x0, int64_t x1){
+int64_t f1 (int64_t x0, int64_t x1){
 
     return __rv_rsub64(x0, x1);
 

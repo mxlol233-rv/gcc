@@ -8,7 +8,7 @@
 
 /*
 **f0:
-** srli8.u\ta[0-9], a[0-9], 1
+** srli8.u\ta[0-9],a[0-9],1
 ** ...
 */
 
@@ -22,7 +22,7 @@ uintXLEN_t f0 (uintXLEN_t x0, uint32_t x1){
 
 /*
 **f2:
-** srli8.u\ta[0-9], a[0-9], 1
+** srli8.u\ta[0-9],a[0-9],1
 ** ...
 */
 
@@ -36,7 +36,7 @@ uint8x8_t f2 (uint8x8_t x0, uint32_t x1){
 
 /*
 **f4:
-** srli8.u\ta[0-9], a[0-9], 1
+** srli8.u\ta[0-9],a[0-9],1
 ** ...
 */
 

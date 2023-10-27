@@ -8,7 +8,7 @@
 
 /*
 **f0:
-** kslli8\ta[0-9], a[0-9], 1
+** kslli8\ta[0-9],a[0-9],1
 ** ...
 */
 
@@ -22,7 +22,7 @@ uintXLEN_t f0 (uintXLEN_t x0, uint32_t x1){
 
 /*
 **f2:
-** kslli8\ta[0-9], a[0-9], 1
+** kslli8\ta[0-9],a[0-9],1
 ** ...
 */
 
@@ -36,7 +36,7 @@ int8x8_t f2 (int8x8_t x0, uint32_t x1){
 
 /*
 **f4:
-** kslli8\ta[0-9], a[0-9], 1
+** kslli8\ta[0-9],a[0-9],1
 ** ...
 */
 

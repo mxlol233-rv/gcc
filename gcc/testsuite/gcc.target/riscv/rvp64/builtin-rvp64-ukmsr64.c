@@ -7,12 +7,12 @@
 
 
 /*
-**f0:
-** ukmsr64\ta[0-9], a[0-9], a[0-9]
+**f1:
+** ukmsr64\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
-uint64_t f0 (uint64_t x0, uintXLEN_t x1, uintXLEN_t x2){
+uint64_t f1 (uint64_t x0, uintXLEN_t x1, uintXLEN_t x2){
 
     return __rv_ukmsr64(x0, x1, x2);
 
@@ -21,12 +21,12 @@ uint64_t f0 (uint64_t x0, uintXLEN_t x1, uintXLEN_t x2){
 
 
 /*
-**f1:
-** ukmsr64\ta[0-9], a[0-9], a[0-9]
+**f2:
+** ukmsr64\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
-uint64_t f1 (uint64_t x0, uint32x2_t x1, uint32x2_t x2){
+uint64_t f2 (uint64_t x0, uint32x2_t x1, uint32x2_t x2){
 
     return __rv_v_ukmsr64(x0, x1, x2);
 

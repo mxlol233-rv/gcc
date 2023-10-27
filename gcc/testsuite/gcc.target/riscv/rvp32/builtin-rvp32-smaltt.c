@@ -8,7 +8,8 @@
 
 /*
 **f0:
-** smaltt\ta[0-9], a[0-9], a[0-9]
+** ...
+** smaltt\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
@@ -21,12 +22,13 @@ int64_t f0 (int64_t x0, uintXLEN_t x1, uintXLEN_t x2){
 
 
 /*
-**f1:
-** smaltt\ta[0-9], a[0-9], a[0-9]
+**f2:
+** ...
+** smaltt\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
-int64_t f1 (int64_t x0, int16x2_t x1, int16x2_t x2){
+int64_t f2 (int64_t x0, int16x2_t x1, int16x2_t x2){
 
     return __rv_v_smaltt(x0, x1, x2);
 

@@ -1000,7 +1000,7 @@
 		     (any_extend:DI
 		       (match_operand:SI 2 "register_operand" " r")))
 	    (const_int 32))))]
-  "(TARGET_ZMMUL || TARGET_MUL) && !TARGET_64BIT"
+  "(TARGET_ZMMUL || TARGET_MUL) && !TARGET_64BIT && !TARGET_ZPN"
   "mulh<u>\t%0,%1,%2"
   [(set_attr "type" "imul")
    (set_attr "mode" "SI")])

@@ -134,9 +134,6 @@ typedef int8x8_t int8xN_t;
 
 #ifdef __riscv_zpn
 /* ZPN */
-#ifndef __riscv_zbpbo
-CREATE_RVP_INTRINSIC(uintXLEN_t, bpick, uintXLEN_t, uintXLEN_t, uintXLEN_t)
-#endif
 CREATE_RVP_INTRINSIC(uintXLEN_t, add8, uintXLEN_t, uintXLEN_t)
 CREATE_RVP_INTRINSIC(uintXLEN_t, add16, uintXLEN_t, uintXLEN_t)
 CREATE_RVP_INTRINSIC(intXLEN_t, ave, intXLEN_t, intXLEN_t)
@@ -796,14 +793,15 @@ __extension__ extern __inline
 }
 
 #if __riscv_xlen == 32
-CREATE_RVP_INTRINSIC(uint32_t, fsr, uint32_t, const uint32_t, uint32_t)
+CREATE_RVP_INTRINSIC(uint32_t, fsr, uint32_t, uint32_t, uint32_t)
+CREATE_RVP_INTRINSIC_ALIAS(uint32_t, fsri, fsr, uint32_t, const uint32_t, uint32_t)
 CREATE_RVP_INTRINSIC_ALIAS(uint32_t, clz, clz32, uint32_t)
-CREATE_RVP_INTRINSIC_ALIAS(uintXLEN_t, pack, pktt16, uintXLEN_t, uintXLEN_t)
-CREATE_RVP_INTRINSIC_ALIAS(uintXLEN_t, packu, pkbb16, uintXLEN_t, uintXLEN_t)
+CREATE_RVP_INTRINSIC_ALIAS(uintXLEN_t, pack, pkbb16, uintXLEN_t, uintXLEN_t)
+CREATE_RVP_INTRINSIC_ALIAS(uintXLEN_t, packu, pktt16, uintXLEN_t, uintXLEN_t)
 #else
 CREATE_RVP_INTRINSIC(uint32_t, fsrw, uint32_t, uint32_t, uint32_t)
-CREATE_RVP_INTRINSIC_ALIAS(uintXLEN_t, pack, pktt32, uintXLEN_t, uintXLEN_t)
-CREATE_RVP_INTRINSIC_ALIAS(uintXLEN_t, packu, pkbb32, uintXLEN_t, uintXLEN_t)
+CREATE_RVP_INTRINSIC_ALIAS(uintXLEN_t, pack, pkbb32, uintXLEN_t, uintXLEN_t)
+CREATE_RVP_INTRINSIC_ALIAS(uintXLEN_t, packu, pktt32, uintXLEN_t, uintXLEN_t)
 #endif
 
 #endif // END OF __riscv_zbpbo

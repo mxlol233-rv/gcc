@@ -8,27 +8,13 @@
 
 /*
 **f0:
-** clrs32\ta[0-9], a[0-9]
+** clrs32\ta[0-9],a[0-9]
 ** ...
 */
 
 uintXLEN_t f0 (intXLEN_t x0){
 
     return __rv_clrs32(x0);
-
-}
-
-
-
-/*
-**f1:
-** clrs32\ta[0-9], a[0-9]
-** ...
-*/
-
-uint32x2_t f1 (int32x2_t x0){
-
-    return __rv_v_clrs32(x0);
 
 }
 

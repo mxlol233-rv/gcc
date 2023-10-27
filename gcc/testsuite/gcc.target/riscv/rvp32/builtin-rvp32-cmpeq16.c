@@ -8,7 +8,7 @@
 
 /*
 **f0:
-** cmpeq16\ta[0-9], a[0-9], a[0-9]
+** cmpeq16\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
@@ -22,7 +22,7 @@ uintXLEN_t f0 (uintXLEN_t x0, uintXLEN_t x1){
 
 /*
 **f1:
-** cmpeq16\ta[0-9], a[0-9], a[0-9]
+** cmpeq16\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
@@ -36,7 +36,7 @@ uint16x2_t f1 (int16x2_t x0, int16x2_t x1){
 
 /*
 **f2:
-** cmpeq16\ta[0-9], a[0-9], a[0-9]
+** cmpeq16\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 

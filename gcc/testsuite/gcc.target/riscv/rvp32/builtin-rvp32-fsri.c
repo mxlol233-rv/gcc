@@ -8,13 +8,13 @@
 
 /*
 **f0:
-** fsri\ta[0-9], a[0-9], a[0-9], 1
+** fsri\ta[0-9],a[0-9],a[0-9],1
 ** ...
 */
 
 uint32_t f0 (uint32_t x0, uint32_t x1, uint32_t x2){
 
-    return __rv_fsr(x0, x1, 1);
+    return __rv_fsri(x0, 1, x2);
 
 }
 

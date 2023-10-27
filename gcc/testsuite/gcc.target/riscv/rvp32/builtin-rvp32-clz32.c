@@ -8,27 +8,13 @@
 
 /*
 **f0:
-** clz32\ta[0-9], a[0-9]
+** clz32\ta[0-9],a[0-9]
 ** ...
 */
 
 uintXLEN_t f0 (uintXLEN_t x0){
 
     return __rv_clz32(x0);
-
-}
-
-
-
-/*
-**f1:
-** clz32\ta[0-9], a[0-9]
-** ...
-*/
-
-uint32x2_t f1 (uint32x2_t x0){
-
-    return __rv_v_clz32(x0);
 
 }
 

@@ -7,12 +7,12 @@
 
 
 /*
-**f0:
-** uradd64\ta[0-9], a[0-9], a[0-9]
+**f1:
+** uradd64\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
-uint64_t f0 (uint64_t x0, uint64_t x1){
+uint64_t f1 (uint64_t x0, uint64_t x1){
 
     return __rv_uradd64(x0, x1);
 

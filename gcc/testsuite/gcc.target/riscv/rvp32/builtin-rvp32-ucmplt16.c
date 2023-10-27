@@ -8,7 +8,7 @@
 
 /*
 **f0:
-** ucmplt16\ta[0-9], a[0-9], a[0-9]
+** ucmplt16\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
@@ -22,7 +22,7 @@ uintXLEN_t f0 (uintXLEN_t x0, uintXLEN_t x1){
 
 /*
 **f1:
-** ucmplt16\ta[0-9], a[0-9], a[0-9]
+** ucmplt16\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 

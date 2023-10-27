@@ -8,7 +8,7 @@
 
 /*
 **f0:
-** csrrci	zero, vxsat, 1
+** csrrci	zero,vxsat,1
 ** ...
 */
 

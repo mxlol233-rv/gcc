@@ -7,12 +7,12 @@
 
 
 /*
-**f0:
-** smal\ta[0-9], a[0-9], a[0-9]
+**f1:
+** smal\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
-int64_t f0 (int64_t x0, uintXLEN_t x1){
+int64_t f1 (int64_t x0, uintXLEN_t x1){
 
     return __rv_smal(x0, x1);
 
@@ -21,12 +21,12 @@ int64_t f0 (int64_t x0, uintXLEN_t x1){
 
 
 /*
-**f2:
-** smal\ta[0-9], a[0-9], a[0-9]
+**f3:
+** smal\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
-int64_t f2 (int64_t x0, int16x4_t x1){
+int64_t f3 (int64_t x0, int16x4_t x1){
 
     return __rv_v_smal(x0, x1);
 

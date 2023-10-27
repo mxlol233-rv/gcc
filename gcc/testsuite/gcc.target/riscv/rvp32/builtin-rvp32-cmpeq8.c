@@ -8,7 +8,7 @@
 
 /*
 **f0:
-** cmpeq8\ta[0-9], a[0-9], a[0-9]
+** cmpeq8\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
@@ -22,7 +22,7 @@ uintXLEN_t f0 (uintXLEN_t x0, uintXLEN_t x1){
 
 /*
 **f1:
-** cmpeq8\ta[0-9], a[0-9], a[0-9]
+** cmpeq8\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
@@ -36,7 +36,7 @@ uint8x4_t f1 (int8x4_t x0, int8x4_t x1){
 
 /*
 **f2:
-** cmpeq8\ta[0-9], a[0-9], a[0-9]
+** cmpeq8\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 

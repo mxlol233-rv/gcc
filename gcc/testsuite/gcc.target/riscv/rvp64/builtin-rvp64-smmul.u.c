@@ -8,7 +8,7 @@
 
 /*
 **f0:
-** smmul.u\ta[0-9], a[0-9], a[0-9]
+** smmul.u\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
@@ -22,7 +22,7 @@ intXLEN_t f0 (intXLEN_t x0, intXLEN_t x1){
 
 /*
 **f1:
-** smmul.u\ta[0-9], a[0-9], a[0-9]
+** smmul.u\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 

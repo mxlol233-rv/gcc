@@ -8,7 +8,7 @@
 
 /*
 **f0:
-** umaqa\ta[0-9], a[0-9], a[0-9]
+** umaqa\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 
@@ -22,7 +22,7 @@ uintXLEN_t f0 (uintXLEN_t x0, uintXLEN_t x1, uintXLEN_t x2){
 
 /*
 **f2:
-** umaqa\ta[0-9], a[0-9], a[0-9]
+** umaqa\ta[0-9],a[0-9],a[0-9]
 ** ...
 */
 

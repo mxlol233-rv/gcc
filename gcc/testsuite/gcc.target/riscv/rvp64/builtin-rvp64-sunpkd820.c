@@ -8,7 +8,7 @@
 
 /*
 **f0:
-** sunpkd820\ta[0-9], a[0-9]
+** sunpkd820\ta[0-9],a[0-9]
 ** ...
 */
 
@@ -22,7 +22,7 @@ uintXLEN_t f0 (uintXLEN_t x0){
 
 /*
 **f2:
-** sunpkd820\ta[0-9], a[0-9]
+** sunpkd820\ta[0-9],a[0-9]
 ** ...
 */
 
