@@ -95,4 +95,8 @@ public:
 
 extern const riscv_subset_list *riscv_current_subset_list (void);
 
+#define TARGET_SUBSET_VERSION_P(SUBSET, MAJOR, MINOR) \
+  (riscv_current_subset_list () -> lookup (SUBSET, MAJOR, MINOR) != NULL)
+
+
 #endif /* ! GCC_RISCV_SUBSET_H */
