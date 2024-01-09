@@ -65,6 +65,10 @@
 
   ;; OR-COMBINE
   UNSPEC_ORC_B
+
+  UNSPEC_VWLDST
+  UNSPEC_USEVL
+  UNSPEC_MASKED_STORE
 ])
 
 (define_c_enum "unspecv" [
@@ -191,7 +195,7 @@
 (define_attr "ext_enabled" "no,yes"
   (cond [(eq_attr "ext" "base")
 	 (const_string "yes")
-	
+
 	 (and (eq_attr "ext" "f")
 	      (match_test "TARGET_HARD_FLOAT"))
 	 (const_string "yes")
@@ -212,6 +216,10 @@
 	 (const_string "no")]
 	(const_string "yes")))
 
+;; Main element type used by the insn
+(define_attr "emode" "unknown,QI,HI,SI,DI,HF,SF,DF"
+  (const_string "unknown"))
+
 ;; Classification of each insn.
 ;; branch	conditional branch
 ;; jump		unconditional jump
@@ -227,7 +235,7 @@
 ;; logical      integer logical instructions
 ;; shift	integer shift instructions
 ;; slt		set less than instructions
-;; imul		integer multiply 
+;; imul		integer multiply
 ;; idiv		integer divide
 ;; move		integer register move (addi rd, rs1, 0)
 ;; fmove	floating point register move
@@ -344,7 +352,7 @@
   "unknown,branch,jump,call,load,fpload,store,fpstore,
    mtc,mfc,const,arith,logical,shift,slt,imul,idiv,move,fmove,fadd,fmul,
    fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,ghost,bitmanip,rotate,
-   atomic,condmove,crypto,rdvlenb,rdvl,vsetvl,vlde,vste,vldm,vstm,vlds,vsts,
+   atomic,condmove,crypto,rdvlenb,rdvl,vsetvl,vset,vlde,vste,vldm,vstm,vlds,vsts,
    vldux,vldox,vstux,vstox,vldff,vldr,vstr,
    vialu,viwalu,vext,vicalu,vshift,vnshift,vicmp,viminmax,
    vimul,vidiv,viwmul,vimuladd,viwmuladd,vimerge,vimov,

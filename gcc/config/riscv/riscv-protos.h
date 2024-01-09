@@ -105,6 +105,9 @@ extern bool riscv_hard_regno_rename_ok (unsigned, unsigned);
 rtl_opt_pass * make_pass_shorten_memrefs (gcc::context *ctxt);
 rtl_opt_pass * make_pass_vsetvl (gcc::context *ctxt);
 
+bool target_subset_version_p (const char *subset, int major, int minor);
+
+
 /* Information about one CPU we know about.  */
 struct riscv_cpu_info {
   /* This CPU's canonical name.  */

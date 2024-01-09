@@ -31,6 +31,13 @@
 #include "poly-int.h"
 #include "output.h"
 
+bool
+target_subset_version_p (const char *subset, int major, int minor)
+{
+  return TARGET_SUBSET_VERSION_P (subset, major, minor);
+}
+
+
 /* If MEM is in the form of "base+offset", extract the two parts
    of address and set to BASE and OFFSET, otherwise return false
    after clearing BASE and OFFSET.  */

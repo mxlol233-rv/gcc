@@ -4330,7 +4330,7 @@
     else
       {
         emit_insn (gen_pred_merge<mode> (operands[0], RVV_VUNDEF (<MODE>mode),
-                	operands[5], operands[4], operands[1], operands[6], 
+                	operands[5], operands[4], operands[1], operands[6],
 			operands[7], operands[9]));
         operands[5] = operands[4] = operands[0];
       }
@@ -4751,7 +4751,7 @@
     else
       {
         emit_insn (gen_pred_merge<mode> (operands[0], RVV_VUNDEF (<MODE>mode),
-                	operands[5], operands[4], operands[1], operands[6], 
+                	operands[5], operands[4], operands[1], operands[6],
 			operands[7], operands[9]));
         operands[5] = operands[4] = operands[0];
       }
@@ -7280,3 +7280,5 @@
   "vle<sew>ff.v\t%0,%3%p1"
   [(set_attr "type" "vldff")
    (set_attr "mode" "<MODE>")])
+
+(include "vector-v0p7.md")
